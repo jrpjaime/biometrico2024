@@ -1,0 +1,207 @@
+
+<app-menu></app-menu>
+
+<section>
+
+  <div class="container">
+
+    <div class="row"  >
+
+      <div class="col-md-11">
+        <h4>Registrar Credencial</h4>
+        <hr class="red">
+      </div>
+    </div>
+
+
+    <div class="row"  >
+    <div class="col-md-12">
+
+      <div class="card-container" style="margin-top: 100px;">
+
+
+
+          <div class="card">
+
+
+
+
+      <table class="table table-responsive"  >
+
+    <tbody>
+        <tr style="text-align: center;">
+            <td>
+
+              <div style="text-align:center">
+
+                <div *ngIf="!capturoAnverso || !capturoReverso" >
+                  <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                          [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                          [videoOptions]="videoOptions"
+                          [imageQuality]="1"
+                          (cameraSwitched)="cameraWasSwitched($event)"
+                          (initError)="handleInitError($event)"
+                  ></webcam>
+                  <br/>
+
+                <!--  <button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
+                  <br/>
+                  <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
+                  <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
+                  <br/>
+                  DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+                  <button (click)="showNextWebcam(deviceId);">Activate</button>
+                  -->
+                </div>
+              </div>
+
+              <div class="snapshot" *ngIf="webcamImage">
+              <!--   <h2>Credencial</h2>
+                <img [src]="webcamImage.imageAsDataUrl"/>
+
+                <h2 [textContent]="webcamImage.imageAsBase64"></h2>-->
+              </div>
+
+              <h4 *ngIf="errors.length > 0">Messages:</h4>
+              <ul *ngFor="let error of errors">
+                <li>{{error | json}}</li>
+              </ul>
+
+
+              <h4  >{{resultado}}</h4>
+
+
+
+
+            </td>
+
+
+            <td>
+
+              <table class="table">
+                <tbody>
+                  <tr *ngIf="testlifecredencial.claveElector">
+                  <td>Clave de Elector:</td>
+                  <td>{{testlifecredencial.desClaveElector}}</td>
+                  <td *ngIf="testlifecredencial.claveElector">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                  <td *ngIf="!testlifecredencial.claveElector">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.nombre">
+                    <td>Nombre(s):</td>
+                    <td>{{testlifecredencial.desNombre}}</td>
+                    <td *ngIf="testlifecredencial.nombre">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.nombre">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.apellidoPaterno">
+                    <td>Primer Apellido:</td>
+                    <td>{{testlifecredencial.desPrimerApellido}}</td>
+                    <td *ngIf="testlifecredencial.apellidoPaterno">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.apellidoPaterno">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.apellidoMaterno">
+                    <td>Segundo Apellido:</td>
+                    <td>{{testlifecredencial.desSegundoApellido}}</td>
+                    <td *ngIf="testlifecredencial.apellidoMaterno">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.apellidoMaterno">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.anioEmision">
+                    <td>Año de Emisión:</td>
+                    <td>{{testlifecredencial.desAnioEmision}}</td>
+                    <td *ngIf="testlifecredencial.anioEmision">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.anioEmision">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.numeroEmisionCredencial">
+                    <td >Número de Emisión:</td>
+                    <td>{{testlifecredencial.desNumeroEmision}}</td>
+                    <td *ngIf="testlifecredencial.numeroEmisionCredencial">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.numeroEmisionCredencial">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.curpvalida">
+                    <td>CURP:</td>
+                    <td>{{testlifecredencial.desCurpCredencial}}</td>
+                    <td *ngIf="testlifecredencial.curpvalida">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.curpvalida">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                  <tr *ngIf="testlifecredencial.anioRegistro">
+                    <td>Año de Registro:</td>
+                    <td>{{testlifecredencial.desAnioRegistro}}</td>
+                    <td *ngIf="testlifecredencial.anioRegistro">  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+                    <td *ngIf="!testlifecredencial.anioRegistro">  <i style="color: #FF0000;" class="fa-sharp fa-solid fa-xmark fa-1x"></i> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+            </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="row">
+            <div class="col-md-12" *ngIf="!capturoAnverso"><button class="btn btn-primary" (click)="triggerSnapshotFrente();">  <i   class="fa fa-solid fa-camera fa-1x"></i> Captura el frente de tu credencial </button></div>
+
+            <div class="col-md-12" *ngIf="capturoAnverso"><img   src="{{'data:image/png;base64,'+imagenAnverso}}"   width="260" height="200"/></div>
+
+            <div class="col-md-12" *ngIf="capturoAnverso && !terminoCaptura"><button class="btn btn-primary" (click)="eliminarFrente();">  <i   class="fa fa-solid fa-trash fa-1x"></i> </button></div>
+          </div>
+
+
+        </div>
+
+        <div class="col-md-6"  >
+
+          <div class="row">
+            <div class="col-md-6" *ngIf="capturoAnverso && !capturoReverso" ><button class="btn btn-primary" (click)="triggerSnapshotReverso();"><i   class="fa fa-solid fa-camera fa-1x"></i> Captura el reverso de tu credencial</button></div>
+
+            <div class="col-md-6" *ngIf="capturoReverso"><img  src="{{'data:image/png;base64,'+imagenReverso}}"   width="260" height="200"/></div>
+            <div class="col-md-12" *ngIf="capturoReverso && !terminoCaptura"><button class="btn btn-primary" (click)="eliminarReverso();">  <i   class="fa fa-solid fa-trash fa-1x"></i> </button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row" *ngIf="capturoAnverso && capturoReverso && !terminoCaptura">
+        <div class="col-md-12" style="text-align: center;"><br><br><br><button class="btn btn-primary" (click)="onSubmit();">Finalizar captura de credencial</button></div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+</section>

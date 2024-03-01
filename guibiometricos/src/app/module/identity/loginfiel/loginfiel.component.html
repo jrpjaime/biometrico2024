@@ -1,0 +1,52 @@
+
+
+
+<section  >
+
+
+    <div class="row" style="margin-top: 14px;" >
+      <div class="col-md-5 hidden-xs"  >
+        <img src="../../../../assets/imagen/login.png" class="img-fluid">
+      </div>
+      <div class="col-md-1">
+        <a (click)="login()" style="margin-top: 14px;" class="btn btn-primary "><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+      </div>
+      <div class="col-md-5">
+
+      <div class="card-container" style="margin-top: 100px;">
+
+
+                <div class="card">
+
+
+                  <div class="row">
+                    <div class="single-feature align-items-center" >
+                      <div id="firmaWidget"  hidden="true" >
+                            <form id="formWidget"  action="http://172.16.23.224/firmaElectronicaWeb/widget/chfecyn"
+                                  method="post" target="formFirmaDigital">
+                                <input id="params" name="params" type="hidden" value='{"operacion":"validarCertificado","salida":"rfc,cert,vigIni,vigFin,serie_cert,curp,rfc_rl,curp_rl,nombreRazonSocial"}'>
+                                <input type="submit" style="display: none" value="Firmar varias 'cadenas originales'">
+                            </form>
+
+                      <div align="left">
+                         <iframe id="formFirmaDigital" name="formFirmaDigital" width="850" height="372"  scrolling="yes" style="overflow:visible;" frameborder="0" ></iframe>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+
+                </div>
+
+      </div>
+
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+  </div>
+
+</section>

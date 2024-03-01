@@ -1,0 +1,64 @@
+
+<section>
+
+  <div class="container">
+  <div class="row " >
+    <div class="col-md-12"  >
+
+    <div class="contenedorscroll">
+      <br>
+      <table class="table table-responsive" *ngIf="!isEmpty">
+          <thead>
+            <tr>
+              <th class="headerPaginadorderecha" scope="col">&nbsp;</th>
+              <th class="headerPaginadorcentro" scope="col">Medio de Contacto</th>
+              <th class="headerPaginadorcentro"scope="col">Fecha de Registro</th>
+              <th class="headerPaginadorizquierda" scope="col">Fecha de Confirmación</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let contacto of contactos" style="text-align: center;">
+              <td><a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#deleteModal"  (click)="deleteContacto(contacto.cveIdMedioContacto, contacto.desCorreoElectronico)"><span style="color:#005044 ;" class="glyphicon glyphicon-trash"></span></a> </td>
+              <td>{{contacto.desCorreoElectronico}}</td>
+              <td>{{contacto.fecRegistro | date: 'dd/MM/YYYY HH:mm'}}</td>
+              <td>{{contacto.fecConfirmacion | date: 'dd/MM/YYYY  HH:mm'}}</td>
+
+          </tr>
+          <tr>
+              <td colspan="2"  class="paginador">
+                  <input type="checkbox" style="vertical-align: sub;" (change)="onCheckboxChange($event)"  id="paginaAll" name="paginaAll"  [(ngModel)]="paginaAll" > Todo
+                  |
+                  <i  style="cursor: pointer;" class="fa fa-light fa-backward" (click)="setPage(0)"></i> &nbsp;
+                  <i  style="cursor: pointer;" class="glyphicon glyphicon-chevron-left" (click)="rewindPage()"></i>&nbsp;
+                  <i  style="cursor: pointer;" class="glyphicon glyphicon-chevron-right" (click)="forwardPage()"></i>&nbsp;
+                  <i  style="cursor: pointer;" class="glyphicon glyphicon-forward" (click)="setPage(numeroPaginas-1)"></i>&nbsp;
+                  |
+                  Página
+                  <input type="number"  class="txtelemento"  id="pagina" name="pagina" min="1" [max]="numeroPaginas"  placeholder="Página"  [(ngModel)]="seleccionapagina"  > &nbsp;
+                  <button type="button"   class="btn btn-primary btn-xs btn-ira"   (click)="setPage(seleccionapagina-1)"   [disabled]="seleccionapagina<1 || seleccionapagina>numeroPaginas"  >Ir a</button>
+                    &nbsp;&nbsp;
+                    <select name="size" class="txtelemento" [(ngModel)]="size" (ngModelChange)="setSizeCombo()">
+                        <option [value]="item" *ngFor="let item of elementosPagina">{{item}}</option>
+                    </select>&nbsp; Por página
+              </td>
+              <td colspan="2"  class="paginadorderecha">
+                {{(((page+1)*size)-size)+1}} - {{((page)*size)+numberOfElements}} visualizados, {{numeroPaginas}} páginas, {{totalElements}} registros en total.
+              </td>
+          </tr>
+          </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row " *ngIf="!isEmpty">
+    <div class="col-md-6"   >
+    </div>
+    <div class="col-md-6 pull-right">
+    </div>
+  </div>
+
+   </div>
+
+</section>

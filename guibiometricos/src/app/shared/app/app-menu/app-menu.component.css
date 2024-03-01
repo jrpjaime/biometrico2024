@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgb(67, 99, 67);
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: white !important;
+    border-color: rgb(67, 99, 67);
+    background-color: rgb(67, 99, 67);
+}
+
+.navbar-nav .dropdown-menu.active,
+.navbar-nav .dropdown-menu:hover {
+    border-color: rgb(67, 99, 67) !important;
+}
+
+.navbar-nav .dropdown-menu > li:hover {
+    border-left: solid 5px rgb(67, 99, 67) !important;
+    color: rgb(67, 99, 67) !important;
+    font-weight: bold;
+}
+
+.glyphicon-movimientos:before {
+  content: url("../../../../assets/icons/menu-movimientos/Group.png");
+}
+.glyphicon-administrador:before {
+  content: url("../../../../assets/icons/menu-administrador/Group.png");
+}
+.glyphicon-bitacora:before {
+  content: url("../../../../assets/icons/menu-bitacora/Group.png");
+}
+.glyphicon-consultas:before {
+  content: url("../../../../assets/icons/menu-consultas/Group 34235.png");
+}
+

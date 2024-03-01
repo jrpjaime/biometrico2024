@@ -1,0 +1,108 @@
+<app-menu></app-menu>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Medio de contacto </h4>
+        <hr class="red">
+      </div>
+    </div>
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button"   class="btn btn-primary pull-right" data-toggle="modal" data-target="#nuevoModal" (click)="onNuevoContacto()">Agregar Contacto</button>
+
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <app-listacontacto (vacio)="tieneContacto($event)" (deleteContactoEventEmitter)="openDeleteContacto($event)"   [cveIdUsuario]="cveIdUsuario" >
+        </app-listacontacto>
+      </div>
+      <div class="col-md-12" style="padding-left: 30px;"  *ngIf="tieneContacto && isBuscar">
+        No se encontraron registros.
+      </div>
+    </div>
+
+
+
+    <div class="modal fade"  id="nuevoModal" *ngIf="nuevoShowModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Agregar Medio de Contacto </h4>
+          </div>
+          <div class="modal-body">
+
+          <form [formGroup]="formAdministracioncontacto" autocomplete="off">
+
+
+            <div class="col-md-12 d-flex flex-column justify-content-between" style="margin-top: .7em;">
+              <div class="form-group">
+                <label for="desCorreoElectronico" class="col-form-label">Medio de Contacto <span class="txtrequired">*</span>:</label>
+                <input  type="text" size="100" class="form-control" formControlName="desCorreoElectronico"   placeholder="Correo Electrónico"   />
+              </div>
+            </div>
+
+
+
+          </form>
+          </div>
+          <div class="modal-footer">
+            <hr>
+            <div style="text-align: center;" >¿Confirmas que la información es correcta?</div>
+            <br>
+            <button type="button"  class="btn btn-danger btn-size-modal" data-dismiss="modal" #closeBtnNuevo id="closeBtnNuevo" >Cancelar</button>
+            <button type="button" class="btn btn-primary pull-right btn-size-modal" (click)="onCreateContacto()" [disabled]="!(formAdministracioncontacto.valid )"    >Aceptar </button>
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <div class="modal fade"  id="deleteModal" *ngIf="deleteShowModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Eliminar Medio de Contacto </h4>
+          </div>
+          <div class="modal-body">
+
+          <form [formGroup]="formAdministracioncontacto" autocomplete="off">
+
+
+            <div class="col-md-12 d-flex flex-column justify-content-between" style="margin-top: .7em;">
+              <div class="form-group">
+                <label for="desCorreoElectronico" class="col-form-label">Medio de Contacto <span class="txtrequired">*</span>:</label>
+                <input  type="text" size="100" class="form-control" formControlName="desCorreoElectronico"   placeholder="Correo Electrónico"   />
+              </div>
+            </div>
+
+
+
+          </form>
+          </div>
+          <div class="modal-footer">
+            <hr>
+            <div style="text-align: center;" >¿Confirmas la eliminación del registro?</div>
+            <br>
+            <button type="button"  class="btn btn-danger btn-size-modal" data-dismiss="modal" #closeBtnDelete id="closeBtnDelete" >Cancelar</button>
+            <button type="button" class="btn btn-primary pull-right btn-size-modal" (click)="onDeleteContacto()"    >Aceptar </button>
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+  </div>
+
+</section>

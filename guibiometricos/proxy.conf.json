@@ -1,0 +1,394 @@
+{
+
+
+
+  "/v1/token" : {
+    "target": "http://localhost:9002/msbiometricos-autorizacion",
+    "secure": false,
+    "changeOrigin": true
+},
+"/v1/userinfo" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/listContacto" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/listContactoAutorizado" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+
+"/v1/createContacto" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/deleteContacto" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/validarContacto" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+
+"/v1/validarCredencial" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/registrarCredencial" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+
+"/v1/verificaRegistroCredencial" : {
+  "target": "http://localhost:9002/msbiometricos-autorizacion",
+  "secure": false,
+  "changeOrigin": true
+},
+
+
+
+
+  "/v1/login" : {
+    "target": "http://localhost:9002/auth",
+    "secure": false,
+    "changeOrigin": true
+  },
+
+
+
+  "/v1/refresh" : {
+    "target": "http://localhost:9002/auth",
+    "secure": false,
+    "changeOrigin": true
+  },
+
+    "/v1/list" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/detail" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/detailretroalimentacion" : {
+      "target": "http://localhost:9002/mssaiia-afiliacion",
+      "secure": false,
+      "changeOrigin": true
+  },
+
+
+    "/v1/delete" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/create" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/update" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/movimientosIndividualesTempLista" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/getLoteMovimientoIndividual" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/validacionNssRp" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/validarFechaRecepcion" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/validarFechaFin" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/validarFechaFiltro" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/listAutorizacion" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/listDetalleAutorizacion" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/autorizar" : {
+        "target": "http://localhost:9002/mssaiia-afiliacion",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/cargadispmag" : {
+      "target": "http://localhost:9002/mssaiia-afiliacion",
+      "secure": false,
+      "changeOrigin": true
+  },
+  "/v1/listBitacora" : {
+      "target": "http://localhost:9002/mssaiia-afiliacion",
+      "secure": false,
+      "changeOrigin": true
+  },
+  "/v1/listDetalleBitacora" : {
+      "target": "http://localhost:9002/mssaiia-afiliacion",
+      "secure": false,
+      "changeOrigin": true
+  },
+  "/v1/listConsultalote" : {
+      "target": "http://localhost:9002/mssaiia-afiliacion",
+      "secure": false,
+      "changeOrigin": true
+  },
+  "/v1/listDetalleConsultalote" : {
+    "target": "http://localhost:9002/mssaiia-afiliacion",
+    "secure": false,
+    "changeOrigin": true
+},
+"/v1/listReportemovimientos" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/listRetroalimentacion" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/listDetalleRetroalimentacion" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/listAdministraciondiainhabil" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/createDiaInhabil" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/actualizarDiaInhabil" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/deleteDiaInhabil" : {
+  "target": "http://localhost:9002/mssaiia-afiliacion",
+  "secure": false,
+  "changeOrigin": true
+},
+
+
+
+
+
+
+
+
+    "/v1/guia" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/tipoTrabajador" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/tipoSalario" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/jornadaSemana" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/tipoPago" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/argumento" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/argumentoretroalimentacion" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+  },
+
+
+    "/v1/argumentos" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/causaBaja" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/tipoUsuario" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/delegacion" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/subdelegacion" : {
+        "target": "http://localhost:9006/mssaiia-catalogos",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/v1/tipoMovimiento" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/v1/estadoMovimiento" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/v1/anio" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/v1/mes" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/v1/infoNssRp" : {
+      "target": "http://localhost:9006/mssaiia-catalogos",
+      "secure": false,
+      "changeOrigin": true
+    },
+
+    "/v1/usuario/*" : {
+        "target": "http://localhost:9007/mssaiia-sau",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+
+    "/v1/acuseMovimientos" : {
+        "target": "http://localhost:9003/mssaiia-reportes",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+
+    "/v1/acuseMovimientoslote" : {
+      "target": "http://localhost:9003/mssaiia-reportes",
+      "secure": false,
+      "changeOrigin": true
+  },
+
+  "/v1/acuselote" : {
+    "target": "http://localhost:9003/mssaiia-reportes",
+    "secure": false,
+    "changeOrigin": true
+},
+
+"/v1/constancialote" : {
+  "target": "http://localhost:9003/mssaiia-reportes",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/bitacora" : {
+  "target": "http://localhost:9003/mssaiia-reportes",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/reporteMovimientos" : {
+  "target": "http://localhost:9003/mssaiia-reportes",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/reporteLotes" : {
+  "target": "http://localhost:9003/mssaiia-reportes",
+  "secure": false,
+  "changeOrigin": true
+},
+"/v1/acusemovimientosretroalimentacion" : {
+  "target": "http://localhost:9003/mssaiia-reportes",
+  "secure": false,
+  "changeOrigin": true
+},
+
+
+
+
+	"/nidp/oauth/nam/token" : {
+        "target": "https://idpqa.imss.gob.mx",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/nidp/oauth/nam/userinfo" : {
+        "target": "https://idpqa.imss.gob.mx",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/ObtieneDtsUltimoMovtoAsegxRegPat" : {
+        "target": "http://10.104.23.2:8001/WSObtieneDtsUltimoMovtoAsegxRegPatService/resources",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/v1/client" : {
+      "target": "http://localhost:9099/mssaiia-client",
+      "secure": false,
+      "changeOrigin": true
+  },
+
+  "/wssvf9_5/" : {
+    "target": "https://docufielxp.fielnet.com.mx/",
+    "secure": false,
+    "changeOrigin": true
+}
+
+}

@@ -1,0 +1,95 @@
+
+
+
+<section  >
+
+
+    <div class="row" style="margin-top: 14px;" >
+      <div class="col-md-5 hidden-xs"  >
+        <img src="../../../../assets/imagen/login.png" class="img-fluid">
+      </div>
+            <div class="col-md-1">
+        <a (click)="login()" style="margin-top: 14px;" class="btn btn-primary "><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+      </div>
+      <div class="col-md-5">
+
+      <div class="card-container" style="margin-top: 100px;">
+
+
+
+
+        <form [formGroup]="loginForm" autocomplete="off">
+
+          <div class="card">
+
+
+
+          <div class="row">
+
+            <div class="col-md-12 text-center" >
+              <Label style="font-weight: bold; font-size: 1.1em; ">Inicio de sesión</Label><br>
+              <Label style="font-weight: bold; font-size: .8em; ">Ingresa tu usuario y contraseña para ingresar</Label>
+            </div>
+
+          </div>
+
+              <div class="row">
+
+                  <div class="col-md-12 d-flex flex-column justify-content-between" style="margin-top: .7em;">
+                      <div class="form-group">
+                          <label for="curp" class="col-form-label">CURP<span class="txtrequired">*</span>:</label>
+                          <input maxlength="18" type="text" class="form-control" formControlName="curp"  required />
+
+                          <div *ngIf="curp.invalid && curp.touched" class="form-text form-text-error">
+                              <div *ngIf="curp.hasError('required')">Campo requerido.</div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-12 d-flex flex-column justify-content-between" style="margin-top: .7em;">
+
+                      <div class="form-group">
+                          <label for="password" class="col-form-label">Contraseña<span class="txtrequired">*</span>:</label>
+                          <input maxlength="64" type="password" class="form-control"  formControlName="password" required />
+
+                          <div *ngIf="password.invalid && password.touched" class="form-text form-text-error">
+                              <div *ngIf="password.hasError('required')" class="form-text form-text-error">Campo requerido.</div>
+                          </div>
+                          <div *ngIf="error" class="form-text form-text-error">
+                            <div class="form-text form-text-error">Usuario y/o Contraseña incorrecta. Favor de verifica.</div>
+                        </div>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-15"   >
+                  <label for="cveIdTipoMovimiento" style="font-weight: bold; font-size: 0.8em; margin-left: .8em;"> <span class="txtrequired">*</span>Campos obligatorios</label>
+                </div>
+                  <div class="col-md-17 d-flex flex-column justify-content-between" style="margin-top: 1.3em; margin-right: .8em;">
+                      <div class="form-group" style="text-align: right;">
+                          <button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="loginForm.invalid"> Iniciar sesión</button>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+
+      </form>
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+  </div>
+
+</section>

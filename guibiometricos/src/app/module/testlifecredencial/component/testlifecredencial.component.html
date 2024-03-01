@@ -1,0 +1,84 @@
+<app-menu></app-menu>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="row" *ngIf="terminoValidacion">
+      <div class="col-md-12">
+
+        <div *ngIf="testlifecredencial.cofirmavida " class="alert alert-success">{{testlifecredencial.resultado}}</div>
+        <div *ngIf="!testlifecredencial.cofirmavida " class="alert alert-danger">{{testlifecredencial.resultado}}</div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="isValido && !testlifecredencial.cofirmavida">
+      <div class="col-md-12">
+        <img src="{{'data:image/png;base64,'+testlifecredencial.fotoPruebaVida}}" alt="Prueba de vida"  width="220" height="350"/>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="isValido && testlifecredencial.cofirmavida">
+      <div class="col-md-3">
+        <img src="{{'data:image/png;base64,'+testlifecredencial.fotoPruebaVida}}" alt="Prueba de vida"  width="220" height="350"/>
+      </div>
+      <div class="col-md-3">
+
+
+        <img src="{{'data:image/png;base64,'+testlifecredencial.fotoCredencial}}" alt="Credencial"  width="260" height="200"/>
+      </div>
+      <div class="col-md-6">
+        <table class="table">
+          <tbody>
+            <tr *ngIf="testlifecredencial.claveElector">
+            <td>Clave de Elector:</td>
+            <td>{{testlifecredencial.desClaveElector}}</td>
+            <td >  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.nombre">
+              <td>Nombre(s):</td>
+              <td>{{testlifecredencial.desNombre}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.apellidoPaterno">
+              <td>Primer Apellido:</td>
+              <td>{{testlifecredencial.desPrimerApellido}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.apellidoMaterno">
+              <td>Segundo Apellido:</td>
+              <td>{{testlifecredencial.desSegundoApellido}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.anioEmision">
+              <td>Año de Emisión:</td>
+              <td>{{testlifecredencial.desAnioEmision}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.numeroEmisionCredencial">
+              <td >Número de Emisión:</td>
+              <td>{{testlifecredencial.desNumeroEmision}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.curpvalida">
+              <td>CURP:</td>
+              <td>{{testlifecredencial.desCurpCredencial}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+            <tr *ngIf="testlifecredencial.anioRegistro">
+              <td>Año de Registro:</td>
+              <td>{{testlifecredencial.desAnioRegistro}}</td>
+              <td>  <i style="color: #0d9f34;" class="fa fa-sharp fa-solid fa-check fa-1x"></i> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    </div>
+
+
+
+</section>

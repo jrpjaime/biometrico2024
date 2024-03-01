@@ -1,0 +1,34 @@
+
+
+<div class="container mt-3 mb-3">
+  <div class="row" style="margin-top: 14px;" >
+
+    <div class="col-md ">
+
+    <div class="card-container" style="margin-top: 100px;">
+
+        <div class="card">
+
+              <div class="wrapping-box-container" style="text-align: center;">
+                <div id="controls" class="controls">
+                    <!-- Button that will begin a Liveness Check -->
+                    <button *ngIf="isValido" id="liveness-button" disabled (click)="onLivenessCheckPressed()" class="btn btn-primary">Prueba de vida</button>
+                    <!-- The status container that will be updated appropriately based on current state of FaceTecSDK -->
+
+
+                    <div *ngIf="isValido" class="alert alert-info" id="status">Iniciando...</div>
+                </div>
+                <div *ngIf="!isValido" class="alert alert-info" >Registre su credencial</div>
+                <a style="cursor: pointer;" class="btn btn-primary" (click)="inicio()" >
+                  Regresar
+
+                </a>
+              </div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+</div>

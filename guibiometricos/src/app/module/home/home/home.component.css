@@ -1,0 +1,54 @@
+.spacer {
+    flex: 1;
+}
+
+.card-container {
+    justify-content: center;
+}
+
+.card {
+
+    border-radius: 3px;
+    border: 1px solid #eee;
+    /* background-color: #fffffa; */
+    padding: 16px;
+    transition: all 0.2s ease-in-out;
+    line-height: 14px;
+    margin: 0 8px 16px;
+    transform: translateY(-3px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.card-container .card:not(:last-child) {
+    margin-right: 0;
+}
+
+.modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal .modal-dialog {
+    margin-top: 10%;
+}
+
+a:hover {
+    border-color: rgb(16, 64, 16);
+    background-color: rgb(16, 64, 16);
+    padding-bottom: 5px;
+    background: rgb(252, 252, 252);
+    background: linear-gradient(0deg, rgba(252, 252, 252, 1) 0%, rgba(193, 185, 185, 1) 0%, rgba(252, 251, 251, 1) 6%);
+    font: color rgb(16, 64, 16);
+}
+
+.card-text {
+    color: rgb(34, 33, 33);
+    font-size: 0.7em;
+    text-decoration: none;
+    vertical-align: sub;
+}
+
+.img-icon {
+    width: 37px;
+}

@@ -1,0 +1,61 @@
+
+<app-modal></app-modal>
+<app-header title="Biométrico"></app-header>
+<alert></alert>
+
+<section *ngIf="userSession != null">
+	<div class="container">
+
+		<nav class="navbar" style="margin-top: 0 !important;">
+
+			<div class="collapse navbar-collapse" id="subenlaces">
+
+				<ul class="nav navbar-nav mr-auto">
+					<li class="nav-item" >
+						<a class="nav-link" [routerLink]="[ '/' + nav.home ]">
+							<i  class="fa fa-light fa-house fa-1x"></i>
+							&nbsp; Inicio
+						</a>
+					</li>
+          <li class="nav-item" >
+						<a class="nav-link" [routerLink]="[ '/' + nav.loadContacto ]">
+							<i   class="fa fa-thin fa-envelope fa-1x"></i>
+							&nbsp; Medio de contacto
+						</a>
+					</li>
+
+
+
+          <li class="nav-item" >
+						<a style="cursor: pointer;" class="nav-link" (click)="lifeTests()" >
+              <i  class="fa fa-thin fa-heart-pulse fa-1x"  ></i>
+              &nbsp; Prueba de vida
+						</a>
+					</li>
+          <!--
+          <li class="nav-item" >
+						<a class="nav-link" [routerLink]="[ '/' + nav.loadValidacionCredencial ]">
+							<i   class="fa fa-thin fa-envelope fa-1x"></i>
+							&nbsp; Valida Credencial
+						</a>
+					</li>
+        -->
+
+          <li class="nav-item" >
+						<a class="nav-link" [routerLink]="[ '/' + nav.loadValidarcredencial ]">
+							<i   class="fa fa-thin fa-envelope fa-1x"></i>
+							&nbsp; Registrar Credencial
+						</a>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</nav>
+
+	</div>
+
+</section>
+
+

@@ -1,0 +1,179 @@
+.spacer {
+  flex: 1;
+}
+
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  /* display: flex;
+  flex-wrap: wrap; */
+  justify-content: center;
+}
+
+.card {
+   all: inherit;
+  border-radius: 3px;
+  border: 1px solid #fefefe;
+  background-color: #fefefe;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  margin: 0 8px 16px;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.txtelementoform{
+  font-size: 0.9em;
+  color: #4e4a4a;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.txtrequired{
+  color: #9D2449;
+}
+
+
+.paginador{
+  background-color: #005044;
+  font-size: 0.7em;
+   color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 0px 0px  0px 5px;
+   text-align: left;
+
+}
+
+.txtelemento {
+  color: #0f0e0e;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40px;
+  height: 20px;
+}
+
+
+.paginadorderecha{
+  background-color: #005044;
+  font-size: 0.7em;
+   color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 0px 0px  5px 0px;
+   text-align: right;
+
+}
+
+
+
+.headerPaginadorizquierda{
+  background-color: #005044;
+  height: 50px;
+  font-size: 0.8em;
+   color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 0px 15px  0px 0px;
+   text-align: center;
+   vertical-align: middle;
+
+}
+
+.headerPaginadorcentro{
+  background-color: #005044;
+  font-size: 0.8em;
+   color: #ffffff;
+   font-family: sans-serif, Arial, Helvetica ;
+   border-radius: 0px 0px  0px 0px;
+   text-align: center;
+   vertical-align: middle;
+
+}
+
+.headerPaginadorderecha{
+  background-color: #005044;
+  font-size: 0.8em;
+   color: #ffffff;
+   font-family: sans-serif, Arial, Helvetica ;
+   border-radius: 15px 0px  0px 0px;
+   text-align: center;
+   vertical-align: middle;
+
+}
+
+.txtrequired{
+  color: #9D2449;
+}
+
+
+
+
+.table {
+ border-radius: 0px 0px  15px 15px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+ font-size: 0.8em;
+ color: #4e4a4a;
+ font-family: sans-serif, Arial, Helvetica ;
+}
+/*
+.table tr th{
+
+  border-right:  1px solid #e4e1e1;
+  text-align: center;
+
+}
+*/
+.contenedorscroll  {
+  overflow:auto;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.contenedorscroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.contenedorscroll::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.contenedorscroll::-webkit-scrollbar-button:increment,.contenedorscroll::-webkit-scrollbar-button {
+  display: none;
+}
+
+.contenedorscroll::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.contenedorscroll::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.contenedorscroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+tbody > tr > td {
+  vertical-align: inherit;
+  white-space: nowrap;
+}
