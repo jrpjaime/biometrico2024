@@ -32,7 +32,7 @@ public interface UtileriasService {
 
 	String getNameFile(String nameFile);
 
-	void sendEmailExterno(String email, String asunto, String cuerpo) throws Exception;
+	//void sendEmailExterno(String email, String asunto, String cuerpo) throws Exception;
 
 	void encode(String sourceFile, String targetFile);
 

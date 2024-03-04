@@ -81,7 +81,7 @@ export class LogincurpComponent implements OnInit {
     this.authService.logout();
     this.loginForm = this.formBuilder.group({
       curp: ['', [Validators.required ]],
-      password: ['', [Validators.required]]
+      password: ['']
     });
 
   }

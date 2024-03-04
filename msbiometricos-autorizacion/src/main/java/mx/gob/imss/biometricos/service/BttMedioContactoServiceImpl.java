@@ -1475,7 +1475,7 @@ public class  BttMedioContactoServiceImpl implements BttMedioContactoService  {
 		            
 		            
 		            cuerpo=cuerpo.replace("{nombre}", nombre).replace("{url}", url); 
-		            utileriasService.sendEmailExterno(bttmediocontacto.getDesCorreoElectronico(), "Medio de Contacto", cuerpo );
+		         //   utileriasService.sendEmailExterno(bttmediocontacto.getDesCorreoElectronico(), "Medio de Contacto", cuerpo );
 		
 		      //  } catch (Exception e) {
 		       //       e.printStackTrace();
@@ -1708,7 +1708,7 @@ public class  BttMedioContactoServiceImpl implements BttMedioContactoService  {
             		
             
             cuerpo=cuerpo.replace("{nombre}", nombreCompleto) ; 
-            utileriasService.sendEmailExterno(bttMedioContacto.getDesCorreoElectronico(), "Medio de Contacto verificado", cuerpo );
+    //        utileriasService.sendEmailExterno(bttMedioContacto.getDesCorreoElectronico(), "Medio de Contacto verificado", cuerpo );
 			
 			//verifica si el RFC tiene almenos un correo electrónio y un teléfono validado  
 			

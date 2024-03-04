@@ -50,8 +50,8 @@ public class UtileriasServiceImpl implements UtileriasService {
 	private static final Logger logger = LogManager.getLogger(UtileriasServiceImpl.class);
  
 	  
-    @Autowired
-    private JavaMailSender sender;
+ //   @Autowired
+//    private JavaMailSender sender;
     
  
     
@@ -132,7 +132,7 @@ public class UtileriasServiceImpl implements UtileriasService {
 	}
     
 	
-	
+	/*
 	
 	@Override
     public void sendEmailExterno(String email, String asunto,String cuerpo ) throws Exception {
@@ -154,7 +154,7 @@ public class UtileriasServiceImpl implements UtileriasService {
 	}
 
 
- 
+ */
 	
 	 
 

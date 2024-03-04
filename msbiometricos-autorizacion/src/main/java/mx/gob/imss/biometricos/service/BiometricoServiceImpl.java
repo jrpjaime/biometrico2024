@@ -463,32 +463,32 @@ public class BiometricoServiceImpl implements BiometricoService {
 				if (ineRostroVO.getEstado().equals(0)) {
 
 					logger.info("getDescripcion ::: " + ineRostroVO.getDescripcion());
-					logger.info("isClaveElector ::: "
-							+ ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isClaveElector());
-					logger.info("isNombre ::: "
-							+ ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isNombre());
-					logger.info("isApellidoPaterno ::: " + ineRostroVO.getResponse().getDataResponse()
-							.getRespuestaComparacion().isApellidoPaterno());
-					logger.info("isOcr ::: "
-							+ ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isOcr());
-					logger.info("getSimilitud1 ::: " + ineRostroVO.getResponse().getFacialResponse().getSimilitud1());
+					logger.info("isClaveElector ::: " + ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isClaveElector());
+					logger.info("isNombre ::: "+ ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isNombre());
+					logger.info("isApellidoPaterno ::: " + ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isApellidoPaterno());
+					logger.info("isOcr ::: "+ ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isOcr());
+					logger.info("getSimilitudA ::: " + ineRostroVO.getResponse().getFacialResponse().getSimilitud1());
 
-					boolean claveElector = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion()
-							.isClaveElector();
-					boolean anioRegistro = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion()
-							.isAnioRegistro();
-					boolean apellidoPaterno = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion()
-							.isApellidoPaterno();
-					boolean anioEmision = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion()
-							.isAnioEmision();
-					boolean numeroEmisionCredencial = ineRostroVO.getResponse().getDataResponse()
-							.getRespuestaComparacion().isNumeroEmisionCredencial();
+					boolean claveElector = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isClaveElector();
+					logger.info("claveElector " + claveElector);
+					boolean anioRegistro = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isAnioRegistro();
+					logger.info("anioRegistro " + anioRegistro);
+					boolean apellidoPaterno = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isApellidoPaterno();
+					logger.info("apellidoPaterno " + apellidoPaterno);
+					boolean anioEmision = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isAnioEmision();
+					logger.info("anioEmision " + anioEmision);
+					boolean numeroEmisionCredencial = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isNumeroEmisionCredencial();
+					logger.info("numeroEmisionCredencial " + numeroEmisionCredencial);
 					boolean nombre = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isNombre();
+					logger.info("nombre " + nombre);
 					boolean curpvalida = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isCurp();
-					boolean apellidoMaterno = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion()
-							.isApellidoMaterno();
+					logger.info("curpvalida " + curpvalida);
+					boolean apellidoMaterno = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isApellidoMaterno();
+					logger.info("apellidoMaterno" + apellidoMaterno);
 					boolean ocr = ineRostroVO.getResponse().getDataResponse().getRespuestaComparacion().isOcr();
+					logger.info("ocr" + ocr);
 					String similitud1 = ineRostroVO.getResponse().getFacialResponse().getSimilitud1();
+					logger.info("similitud1" + similitud1);
 
 					testlifecredencial.setClaveElector(claveElector);
 					testlifecredencial.setAnioRegistro(anioRegistro);
@@ -514,7 +514,8 @@ public class BiometricoServiceImpl implements BiometricoService {
 					testlifecredencial.setLongitud(longitud);
 
 					testlifecredencial.setCodigo(1);
-
+					try {
+					logger.info("curpvalida::: " + curpvalida);
 					if (!curpvalida) {
 						testlifecredencial.setResultado("Verifique la CURP proporcionada");
 						testlifecredencial.setCodigo(1);
@@ -548,9 +549,12 @@ public class BiometricoServiceImpl implements BiometricoService {
 						testlifecredencial.setCodigo(1);
 						testlifecredencial.setMensaje("Error ");
 					} else {
-						testlifecredencial.setResultado(":::::::::::::::::::::Credencial correcta");
+						testlifecredencial.setResultado("Credencial correcta");
 						testlifecredencial.setCodigo(0);
-						testlifecredencial.setMensaje("Éxito ");
+						testlifecredencial.setMensaje("Éxito");
+						testlifecredencial.setFotoCredencial(loginUsuario.getImagen());
+						
+						logger.info(":::::::::::::::::::::Credencial correcta::: ");
 
 						bitUsuario.setDesClaveElector(desClaveElector);
 						bitUsuario.setDesCurpCredencial(desCurpCredencial);
@@ -561,17 +565,24 @@ public class BiometricoServiceImpl implements BiometricoService {
 						bitUsuario.setDesNumeroEmision(desNumeroEmision);
 						bitUsuario.setDesRegistroCredencial(desAnioRegistro);
 						bitUsuario.setDesEmisionCredencial(desAnioEmision);
-						bitUsuario.setFotoCredencial(loginUsuario.getImagen());
-						bitUsuario.setFotoCredencialReverso(loginUsuario.getImagenreverso());
+						
+						logger.info(":::loginUsuario.getImagen():: "+ loginUsuario.getImagen());
+					 	bitUsuario.setFotoCredencial(loginUsuario.getImagen());
+					 	bitUsuario.setFotoCredencialReverso(loginUsuario.getImagenreverso());
 
 						bitUsuario.setDesCic(cic);
 						bitUsuario.setDesSexoCredencial(sexo);
 						bitUsuario.setDesTipoCredencial(tipo);
 						bitUsuario.setDesSubtipoCredencial(subTipo);
-
+						logger.info("antes de guardar:: ");
 						bitUsuarioService.guardarBitUsuario(bitUsuario);
+						logger.info("despues de guardar:: ");
 			 
 					}
+				}catch (Exception e) {
+					e.printStackTrace();
+					// TODO: handle exception
+				}
 
 					logger.info(">>>>>>>>>>>getResultado ::: " + testlifecredencial.getResultado());
 
